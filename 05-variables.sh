@@ -18,9 +18,9 @@ echo "$person1:: Sorry, you carry on! I will come once you come back"
 echo " "
 echo " "
 
-read -p "enter the right guy whom we need to surrender: " god
+read -p "enter the guy whom we need to surrender: " god
 
-echo "The enter the creator name $god"
+echo "you the creator name $god"
 
 echo ""
 echo ""
@@ -31,7 +31,7 @@ read -s crush
 
 echo " "
 
-echo "your crush name is $crush haha it is visible"
+echo "your crush name is "$crush" haha it is visible"
 
 echo ""
 
@@ -40,4 +40,4 @@ echo ""
 
 read -sp "eneter anything you can see in this line itself: " test
 
-echo $test
+#echo $test
