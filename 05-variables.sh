@@ -5,11 +5,9 @@
 # -s : silent
 
 echo "Enter two characters using space"
-
 read person1 person2
 
-echo""
-
+echo " "
 
 echo "$person1:: Hey $person2, How are you?"
 echo "$person2:: Hello $person1, I am fine. How are you doing"
@@ -18,12 +16,11 @@ echo "$person2:: Nohting, just going to Mars now, will you come?"
 echo "$person1:: Sorry, you carry on! I will come once you come back"
 
 echo " "
-echo" "
-
+echo " "
 
 read -p "enter the right guy whom we need to surrender: " god
 
-echo "The creator $god"
+echo "The enter the creator name $god"
 
 echo ""
 echo ""
@@ -34,13 +31,13 @@ read -s crush
 
 echo " "
 
-echo "your crush name is $crush"
+echo "your crush name is $crush haha it is visible"
 
 echo ""
 
 echo ""
 
 
-read -sp "your input is hidden: " test
+read -sp "eneter anything you can see in this line itself: " test
 
 echo $test
