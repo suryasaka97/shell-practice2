@@ -40,4 +40,4 @@ echo ""
 
 read -sp "eneter anything you can see in this line itself: " test
 
-#echo $test
+echo $test
