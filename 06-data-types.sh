@@ -14,7 +14,7 @@ d=7
 y=12
 r=45
 
-add=$((100-$k+$d+$y+$r))
+add=$((100-$k-$d-$y-$r))
 echo "$add"
 
 time=$(date)
