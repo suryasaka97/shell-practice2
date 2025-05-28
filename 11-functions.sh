@@ -30,7 +30,7 @@ fi
 
 # Function for Validating sytem software installation #
 
-validate(){
+validate() {
     if [ $1 -ne 0 ]
     then
         echo "Installation of $2 failed please check"
@@ -65,7 +65,6 @@ if [ $? -ne 0 ]
 then
     echo "python3 is not installed..installing"
     dnf install python3 -y
-    if [$? -ne 0 ]
     validate $? python3
 else
     echo "python3 is already installed"
