@@ -19,3 +19,6 @@ then
 else
     echo "Installation starts"
 fi        
+
+
+echo "just checking.."
