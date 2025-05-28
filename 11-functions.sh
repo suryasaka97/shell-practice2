@@ -37,6 +37,7 @@ validate(){
         exit 1
     else
         echo "installed $2 successfully"
+    fi  
 }
 
 
