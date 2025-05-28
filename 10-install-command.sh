@@ -17,8 +17,15 @@ then
     echo "please run script using sudo or root"
     exit 1
 else
-    echo "Installation starts"
+    echo "you are unning as root...Installation starts"
 fi        
 
+dnf install mysql -y
 
-echo "just checking.."
+if [ $? -ne 0 ]
+then
+    echo "Mysql installation is failed"
+    exit 1
+else
+    echo "MySQL instalation is success"
+fi        
