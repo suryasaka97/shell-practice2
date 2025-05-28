@@ -15,7 +15,7 @@ user=$(id -u)
 if [ $user -ne 0 ]
 then   
     echo "please run script using sudo or root"
-    exit 0
+    exit 1
 else
     echo "Installation starts"
 fi        
