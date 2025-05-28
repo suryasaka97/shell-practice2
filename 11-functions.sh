@@ -3,12 +3,12 @@
 
 ############# General syntax for function  ####################
 
-greet() {
-    echo "hi $1"
-}
+# greet() {
+#     echo "hi $1"
+# }
 
-############### Calling the Function  ################
-greet $1
+# ############### Calling the Function  ################
+# greet $1
 
 
 #### wite a shell script to install multiple packages #######
