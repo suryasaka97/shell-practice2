@@ -24,7 +24,7 @@ fi
 echo "checking mysql is installed or not"
 dnf list installed mysql
 
-if [ $? eq 0 ]
+if [ $? -eq 0 ]
 then
     echo "mysql is already installed"
     exit 0
