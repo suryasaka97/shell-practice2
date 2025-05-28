@@ -28,6 +28,19 @@ else
     echo "Great!...you ae running as sudo this $0 script as root user"
 fi
 
+# Function for Validating sytem software installation #
+
+validate() {
+    if [ $1 -ne 0 ]
+    then
+        echo "Installation of $2 failed please check"
+        exit 1
+    else
+        echo "installed $2 successfully"
+}
+
+
+
 # Installing mysql script #
 
 echo "Checking....whether you have mysql installed or not!"
@@ -36,14 +49,8 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "mysql is not installed...installing..."
-    dnf install mysql
-    if [ $? -ne 0 ]
-    then
-        echo "mysql is not installed properly....check dnf install"
-        exit 1
-    else
-        echo "mysql installed successfully"
-    fi
+    dnf install mysql -y
+    validate $? mysql
 else
     echo "mysql is already installed"
 fi    
@@ -56,14 +63,9 @@ dnf list installed python3
 if [ $? -ne 0 ]
 then
     echo "python3 is not installed..installing"
-    dnf install python3
+    dnf install python3 -y
     if [$? -ne 0 ]
-    then 
-        echo "Installation failed please check"
-        exit 1
-    else
-        echo "Installed python3 successfully"
-    fi
+    validate $? python3
 else
     echo "python3 is already installed"
 fi
@@ -77,17 +79,13 @@ dnf list installed nginx
 if [ $? -ne 0 ]
 then
     echo "nginx is not installed..installing"
-    dnf install nginx
-    if [ $? -ne 0 ]
-    then 
-        echo "Installation failed please check"
-        exit 1
-    else
-        echo "Installed nginx successfully"
-    fi
+    dnf install nginx -y
+    validate $? nginx
 else
     echo "nginx is already installed"
 fi
+
+
 
 
 
