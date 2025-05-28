@@ -30,7 +30,7 @@ fi
 
 # Function for Validating sytem software installation #
 
-validate() {
+validate(){
     if [ $1 -ne 0 ]
     then
         echo "Installation of $2 failed please check"
