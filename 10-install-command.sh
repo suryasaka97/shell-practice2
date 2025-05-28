@@ -29,6 +29,8 @@ then
     echo "mysql is already installed"
     exit 0
 else
+    echo "installation of my sql starts"
+
     dnf install mysql -y
 
     if [ $? -ne 0 ]
