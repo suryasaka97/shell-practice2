@@ -2,7 +2,7 @@
 
 user=($id -u)
 
-if [ $user -et 0 ]
+if [ $user -eq 0 ]
 then
 echo "Installing............starts"
 else
