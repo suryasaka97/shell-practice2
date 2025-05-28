@@ -25,7 +25,7 @@ then
     echo "please run this script with root privileges"
     exit 1
 else
-    echo "Great!...you ae running as this $0 script as root user"
+    echo "Great!...you ae running as sudo this $0 script as root user"
 fi
 
 # Installing mysql script #
@@ -78,7 +78,7 @@ if [ $? -ne 0 ]
 then
     echo "nginx is not installed..installing"
     dnf install nginx
-    if [$? -ne 0 ]
+    if [ $? -ne 0 ]
     then 
         echo "Installation failed please check"
         exit 1
