@@ -20,7 +20,7 @@ else
     echo "you are unning as root...Installation starts"
 fi        
 
-dnf install mysqlff -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]
 then
