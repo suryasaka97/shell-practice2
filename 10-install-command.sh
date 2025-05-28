@@ -14,18 +14,28 @@ user=$(id -u)
 
 if [ $user -ne 0 ]
 then   
-    echo "please run script using sudo or root"
+    echo "please run script using sudo or root access"
     exit 1
 else
     echo "you are unning as root...Installation starts"
 fi        
 
-dnf install mysql -y
 
-if [ $? -ne 0 ]
+echo "checking mysql is installed or not"
+dnf list installed mysql
+
+if [ $? eq 0 ]
 then
-    echo "Mysql installation is failed"
-    exit 1
+    echo "mysql is already installed"
+    exit 0
 else
-    echo "MySQL instalation is success"
+    dnf install mysql -y
+
+    if [ $? -ne 0 ]
+    then
+        echo "Mysql installation is failed"
+        exit 1
+    else
+        echo "MySQL instalation is success"
+    fi    
 fi        
