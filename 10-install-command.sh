@@ -12,7 +12,7 @@ user=$(id -u)
 ############Always use fail early and fail fast############################
 
 
-if [ $user -ne 0]
+if [ $user -ne 0 ]
 then   
     echo "please run script using sudo or root"
     exit 0
