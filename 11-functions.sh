@@ -20,7 +20,7 @@
 
 user=$(id -u)
 
-if [ $? -ne 0 ]
+if [ $user -ne 0 ]
 then
     echo "please run this script with root privileges"
     exit 1
