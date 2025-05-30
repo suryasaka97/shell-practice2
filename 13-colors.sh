@@ -5,9 +5,9 @@
 
 # Assign colors to the script #
 Red="\e[31m"
-Green=\e[32m
-Yellow=\e[33m
-Reset=\e[0m
+Green="\e[32m"
+Yellow="\e[33m"
+Reset="\e[0m"
 
 
 
