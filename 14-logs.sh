@@ -10,7 +10,7 @@ Yellow="\e[33m"
 Reset="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
-LOG_FILE=("echo $0" | cut -d "." -f1)
+LOG_FILE=(echo "$0" | cut -d "." -f1)
 file_name="$LOG_FILE".log
 
 mkdir -p $LOGS_FOLDER/$file_name
