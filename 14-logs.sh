@@ -11,7 +11,7 @@ Reset="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 LOG_FILE=$(echo "$0" | cut -d "." -f1)
-file_name="$LOG_FILE".log
+file_name=$LOG_FILE.log
 
 mkdir -p $LOGS_FOLDER
 echo "running this script at : $(date)" &>> $LOGS_FOLDER/$file_name
