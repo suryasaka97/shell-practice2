@@ -8,4 +8,4 @@ echo "Virat Kohli"
 
 #for reset use \e[0m #
 
-echo -e " \e[0m Virat Kohli"
+echo -e "\e[0mVirat Kohli"
