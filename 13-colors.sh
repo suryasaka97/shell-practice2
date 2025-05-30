@@ -18,7 +18,7 @@ then
     echo -e "$Red please run this script with root privileges$Reset"
     exit 1
 else
-    echo -e "$Green Great!...you ae running as sudo this $0 script as root user$Reset"
+    echo -e "$Green"Great!...you ae running as sudo this $0 script as root user"$Reset"
 fi
 
 # Function for Validating sytem software installation #
