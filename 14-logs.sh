@@ -44,12 +44,12 @@ validate() {
 # Installing mysql script #
 
 echo -e "$Yellow Checking....whether you have mysql installed or not!$Reset"   &>> $LOGS_FOLDER/$file_name
-dnf list installed mysql
+dnf list installed mysql &>> $LOGS_FOLDER/$file_name
 
 if [ $? -ne 0 ]
 then
     echo -e "$Red mysql is not installed...installing...$Reset"  &>> $LOGS_FOLDER/$file_name
-    dnf install mysql -y
+    dnf install mysql -y  &>> $LOGS_FOLDER/$file_name
     validate $? mysql
 else
     echo -e "$Yellow mysql is already installed$Reset"   &>> $LOGS_FOLDER/$file_name
@@ -58,13 +58,13 @@ fi
 # Installing python3 #
 
 echo -e  "$Yellow Checking....whether you have python installed or not!$Reset"  &>> $LOGS_FOLDER/$file_name
-dnf list installed python3
+dnf list installed python3 &>> $LOGS_FOLDER/$file_name
 
 if [ $? -ne 0 ]
 then
     echo -e "$Red python3 is not installed..installing$Reset"   &>> $LOGS_FOLDER/$file_name
-    dnf install python3 -y
-    validate $? python3
+    dnf install python3 -y  &>> $LOGS_FOLDER/$file_name
+    validate $? python3  &>> $LOGS_FOLDER/$file_name
 else
     echo -e "$Yellow python3 is already installed$Reset"   &>> $LOGS_FOLDER/$file_name
 fi
@@ -73,12 +73,12 @@ fi
 # Installing Nginx #
 
 echo -e "$Yellow Checking....whether you have nginx installed or not!$Reset"   &>> $LOGS_FOLDER/$file_name
-dnf list installed nginx
+dnf list installed nginx  &>> $LOGS_FOLDER/$file_name
 
 if [ $? -ne 0 ]
 then
     echo -e "$Red nginx is not installed..installing$Reset"   &>> $LOGS_FOLDER/$file_name
-    dnf install nginx -y
+    dnf install nginx -y  &>> $LOGS_FOLDER/$file_name
     validate $? nginx
 else
     echo -e "$Yellow nginx is already installed$Reset"   &>> $LOGS_FOLDER/$file_name
