@@ -1,0 +1,13 @@
+# ls-l > output.log ....Redirecting to output.log
+
+# > for Output
+# < for Input
+
+# by default 1> and > is same...used to redirect success outputs
+
+# 2> for failure output
+
+# &> for redirect both
+
+# &>> to append to the existing logs!
+
