@@ -21,10 +21,10 @@ user=$(id -u)
 
 if [ $user -ne 0 ]
 then
-    echo -e "$Red please run this script with root privileges$Reset" &>> $file_name
+    echo -e "$Red please run this script with root privileges$Reset" &>> $LOGS_FOLDER/$file_name
     exit 1
 else
-    echo -e "$Green"Great!...you ae running as sudo this $0 script as root user"$Reset"
+    echo -e "$Green"Great!...you ae running as sudo this $0 script as root user"$Reset" &>> $LOGS_FOLDER/$file_name
 fi
 
 # Function for Validating sytem software installation #
@@ -32,10 +32,10 @@ fi
 validate() {
     if [ $1 -ne 0 ]
     then
-        echo -e "$Red Installation of $2 failed please check$Reset"
+        echo -e "$Red Installation of $2 failed please check$Reset" &>> $LOGS_FOLDER/$file_name
         exit 1
     else
-        echo -e "$Green installed $2 successfully$Reset"
+        echo -e "$Green installed $2 successfully$Reset"   &>> $LOGS_FOLDER/$file_name
     fi  
 }
 
@@ -43,45 +43,45 @@ validate() {
 
 # Installing mysql script #
 
-echo -e "$Yellow Checking....whether you have mysql installed or not!$Reset"
+echo -e "$Yellow Checking....whether you have mysql installed or not!$Reset"   &>> $LOGS_FOLDER/$file_name
 dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
-    echo -e "$Red mysql is not installed...installing...$Reset"
+    echo -e "$Red mysql is not installed...installing...$Reset"  &>> $LOGS_FOLDER/$file_name
     dnf install mysql -y
     validate $? mysql
 else
-    echo -e "$Yellow mysql is already installed$Reset"
+    echo -e "$Yellow mysql is already installed$Reset"   &>> $LOGS_FOLDER/$file_name
 fi    
 
 # Installing python3 #
 
-echo -e  "$Yellow Checking....whether you have python installed or not!$Reset"
+echo -e  "$Yellow Checking....whether you have python installed or not!$Reset"  &>> $LOGS_FOLDER/$file_name
 dnf list installed python3
 
 if [ $? -ne 0 ]
 then
-    echo -e "$Red python3 is not installed..installing$Reset"
+    echo -e "$Red python3 is not installed..installing$Reset"   &>> $LOGS_FOLDER/$file_name
     dnf install python3 -y
     validate $? python3
 else
-    echo -e "$Yellow python3 is already installed$Reset"
+    echo -e "$Yellow python3 is already installed$Reset"   &>> $LOGS_FOLDER/$file_name
 fi
 
 
 # Installing Nginx #
 
-echo -e "$Yellow Checking....whether you have nginx installed or not!$Reset"
+echo -e "$Yellow Checking....whether you have nginx installed or not!$Reset"   &>> $LOGS_FOLDER/$file_name
 dnf list installed nginx
 
 if [ $? -ne 0 ]
 then
-    echo -e "$Red nginx is not installed..installing$Reset"
+    echo -e "$Red nginx is not installed..installing$Reset"   &>> $LOGS_FOLDER/$file_name
     dnf install nginx -y
     validate $? nginx
 else
-    echo -e "$Yellow nginx is already installed$Reset"
+    echo -e "$Yellow nginx is already installed$Reset"   &>> $LOGS_FOLDER/$file_name
 fi
 
 
