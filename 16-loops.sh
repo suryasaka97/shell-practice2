@@ -22,7 +22,7 @@ packages=("mysql" "nginx" "python3" "httpd")
 
 if [ $user -ne 0 ]
 then
-    echo -e "$Red please run this script with root privileges$Reset" &>> $LOGS_FOLDER/$file_name
+    echo -e "$Red please run this script with root privileges$Reset"
     exit 1
 else
     echo -e "$Green"Great!...you ae running this script named $0 root user"$Reset" | tee -a $LOGS_FOLDER/$file_name
