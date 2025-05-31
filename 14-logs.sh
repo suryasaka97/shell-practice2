@@ -35,7 +35,7 @@ validate() {
         echo -e "$Red Installation of $2 failed please check$Reset" | tee -a $LOGS_FOLDER/$file_name
         exit 1
     else
-        echo -e "$Green installed $2 successfully$Reset"   &>> $LOGS_FOLDER/$file_name
+        echo -e "$Green installed $2 successfully$Reset"   | tee -a $LOGS_FOLDER/$file_name
     fi  
 }
 
