@@ -6,6 +6,7 @@
 #-ne  not equal
 #-ge  greater or equal
 #-le  lesser or equal
+# != not equal to for string
 
 a=$1
 

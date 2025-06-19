@@ -20,7 +20,7 @@ echo " "
 
 read -p "enter the guy whom we need to surrender: " god
 
-echo "you the creator name $god"
+echo "the creator name $god"
 
 echo ""
 echo ""
