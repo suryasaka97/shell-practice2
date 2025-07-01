@@ -10,7 +10,7 @@ file=$(echo $0 | cut -d "." -f1)
 filepath="$Log_Folder/$file.log"
 SOURCE_DIR=/home/ec2-user/app-logs
 
-mkdir -p /var/log/app-logs
+mkdir -p /var/log/shellscript-logs
 
 rootuser_check () {
     if [ $user_ID -ne 0 ]
