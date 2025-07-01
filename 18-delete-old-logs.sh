@@ -6,7 +6,7 @@ Y="\e[33m"
 N="\e[0m"
 
 Log_Folder="/var/log/shellscript-logs"
-file= $(echo $0 | cut -d "." -f1)
+file=$(echo $0 | cut -d "." -f1)
 filepath="$Log_Folder/$file.log"
 SOURCE_DIR=/home/ec2-user/app-logs
 
@@ -30,6 +30,7 @@ validate () {
         exit 1
     else
         echo -e "$2 is $G succeed...proceeding$N"
+    fi    
 }
 
 rootuser_check
