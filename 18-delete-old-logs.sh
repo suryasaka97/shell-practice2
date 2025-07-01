@@ -13,7 +13,7 @@ SOURCE_DIR=/home/ec2-user/app-logs
 mkdir -p /var/log/shellscript-logs
 
 rootuser_check () {
-    if [ user_ID -ne 0 ]
+    if [ $user_ID -ne 0 ]
 then
     echo -e "please run script with $R"root user$N"" | tee -a $filepath
     exit 1
