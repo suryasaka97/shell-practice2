@@ -87,5 +87,5 @@ then
     fi        
 
 else
-    echo -e "$Y No files $N to zip"
+    echo -e "$Y No files $N to zip for $DAYS"
 fi        
