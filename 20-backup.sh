@@ -61,3 +61,11 @@ fi
 
 find $SOURCE_DIR -name "*.log" -mtime +$DAYS
 
+files_to_delete=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+
+if [ ! -z $files_to_delete ]
+then
+    echo -e "$G file to zip : $N $files_to_delete"
+else
+    echo -e "$R No files $N to zip"
+fi        
