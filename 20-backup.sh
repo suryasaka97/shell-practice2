@@ -70,6 +70,16 @@ then
     TIMESTAMP="$(date +%F-%H-%M-%s)"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     echo "$files_to_delete" | zip -@ "$ZIP_FILE"
+
+    if [ -f $ZIP_FILE ]
+    then
+        echo "$ZIP_FILE"
+        echo $ZIP_FILE
+    else
+        echo -e "$R error: $N Zip file not created"
+        exit 1
+    fi        
+
 else
-    echo -e "$R No files $N to zip"
+    echo -e "$Y No files $N to zip"
 fi        
