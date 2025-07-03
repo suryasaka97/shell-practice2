@@ -73,10 +73,11 @@ then
 
     if [ -f $ZIP_FILE ]
     then
-        echo $ZIP_FILE
+        echo -e "$G successfull$N created the $ZIP_FILE"
 
         while IFS= read -r files
         do
+            echo -e "$Y Deleting the file : $N $files"
             rm -rf $files
         done <<< "$files_to_delete"
 
