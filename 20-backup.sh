@@ -59,7 +59,7 @@ then
     exit 1
 fi
 
-find $SOURCE_DIR -name "*.log" -mtime +$DAYS
+#find $SOURCE_DIR -name "*.log" -mtime +$DAYS
 
 files_to_delete=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
