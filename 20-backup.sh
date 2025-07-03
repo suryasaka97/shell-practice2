@@ -73,8 +73,13 @@ then
 
     if [ -f $ZIP_FILE ]
     then
-        echo "$ZIP_FILE"
         echo $ZIP_FILE
+
+        while IFS= read -r files
+        do
+            rm -rf $files
+        done <<< "$files_to_delete"
+
     else
         echo -e "$R error: $N Zip file not created"
         exit 1
