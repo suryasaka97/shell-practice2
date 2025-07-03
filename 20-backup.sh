@@ -65,11 +65,11 @@ files_to_delete=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ ! -z "$files_to_delete" ]
 then
-    echo -e "$G file to zip : $N $files_to_delete"
+    echo -e "$G file to zip : $N "$files_to_delete""
     ##cretae Zip file now in dest_dir ###app-logs-date.zip (here date contains current hour,minutes,seconds)
     TIMESTAMP="$(date +%F-%H-%M-%s)"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    echo $files_to_delete | zip -@ "$ZIP_FILE"
+    echo "$files_to_delete" | zip -@ "$ZIP_FILE"
 else
     echo -e "$R No files $N to zip"
 fi        
