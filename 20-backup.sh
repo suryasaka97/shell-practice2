@@ -36,3 +36,28 @@ check_root(){
 
 check_root
 mkdir -p $LOGS_FOLDER
+
+usage() {
+    echo -e "$R Usage: $N sudo sh 20-backup.sh <source_dir> <Dest_Dir> <days(optional)>"
+    exit 1
+}
+
+if [ $# -lt 2 ]
+then
+usage 
+fi
+
+if [ ! -d $SOURCE_DIR ]
+then
+    echo -e "$R $SOURCE_DIR does not exist...$N please check!"
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR ]
+then
+    echo -e "$R $DEST_DIR does not exit...$N please check!"
+    exit 1
+fi
+
+find $SOURCE_DIR -name "*.log" -mtime +$DAYS
+
