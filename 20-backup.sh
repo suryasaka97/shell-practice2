@@ -3,7 +3,8 @@
 USERID=$(id -u)
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14} # if DAYS are provided that will be considered, otherwise default 14 days
+DAYS=${3:-14} # if DAYS are provided that will be considered, otherwise default 14 days 
+#and above -14 is the syntax it doesnnot mean -14 less than 14 days. so -mtime should be -14 or +14.
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
