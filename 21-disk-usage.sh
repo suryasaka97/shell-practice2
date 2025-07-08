@@ -2,7 +2,7 @@
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
 
-while IFS= read eachfile
+while IFS= read eachline
 do
-    awk '{print $6}'
-done >>> $DISK_USAGE
+    echo $eachline | awk '{print $6}'
+done <<< $DISK_USAGE
