@@ -10,6 +10,7 @@ do
     if [ $usage -gt $threshold_value ]
     then
         MSG="High disk usage on $partition:$usage"
-        echo $MSG
+        #echo $MSG
     fi    
+    echo $MSG
 done <<< $DISK_USAGE
