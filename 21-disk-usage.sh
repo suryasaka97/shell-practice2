@@ -17,3 +17,5 @@ done <<< $DISK_USAGE
 
 
 echo $MSG
+
+echo "Hare Krishna"
